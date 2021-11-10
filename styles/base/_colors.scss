@@ -1,0 +1,33 @@
+$-meadow: #3fa9a9;
+$-sunrise: #f59e7a;
+$-storm: #b6c6d1;
+$-snow: #ffffff;
+
+$-grass: #69bda3;
+$-sky: #699dbd;
+$-peach: #f7d87f;
+$-watermelon: #f77f7f;
+
+
+$colors: (
+  primary: $-meadow,
+  accent: $-sunrise,
+  neutral: $-storm,
+  white: $-snow,
+
+  success: $-grass,
+  info: $-sky,
+  danger: $-watermelon,
+  warning: $-peach,
+);
+
+
+@function color($keys...) {
+  $value: $colors;
+
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+}

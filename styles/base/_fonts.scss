@@ -1,0 +1,53 @@
+/* sans-serif font options */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+/* variable sans-serif font options */
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+
+$fonts: (
+  family: (
+    /* sans-serif font options */
+    lato: #{'Lato', sans-serif},
+    montserrat: #{'Montserrat', sans-serif},
+    noto-sans: #{'Noto Sans', sans-serif},
+    pt-sans: #{'PT Sans', sans-serif},
+    roboto: #{'Roboto', sans-serif},
+    source-sans-pro: #{'Source Sans Pro', sans-serif},
+    
+    /* variable sans-serif font options */
+    mohave: #{'Mohave', sans-serif},
+    open-sans: #{'Open Sans', sans-serif},
+  ),
+);
+
+
+@function font($keys...) {
+  $value: $fonts;
+
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+}
+
+
+$fonts: map-merge($fonts, (
+  text: (
+    family: font(family, source-sans-pro),
+    size: 1rem,
+    weight: 400,
+  ),
+
+  title: (
+    family: font(family, source-sans-pro),
+    weight: 400,
+  ),
+));

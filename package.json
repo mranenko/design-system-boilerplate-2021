@@ -1,0 +1,18 @@
+{
+  "author": "Marina Ranenko",
+  "license": "MIT",
+  "main": "demo/index.html",
+  "name": "design-system-boilerplate-2021",
+  "repository": "https://github.com/mranenko/design-system-boilerplate-2021.git",
+  "scripts": {
+    "sass": "sass --watch styles --style compressed --no-source-map",
+    "server": "live-server --open=demo/index.html --port=20213",
+    "start": "yarn sass & yarn server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "sass": "^1.43.4"
+  }
+}

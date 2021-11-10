@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+html {
+  font: normal 16px sans-serif;
+}
+
+body {
+  font-family: font(text, family);
+  font-size: font(text, size);
+  font-weight: font(text, weight);
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+h1, h2, h3, h4, h5, h6, .title, .subtitle {
+  font-family: font(title, family);
+  font-weight: font(title, weight);
+  margin: 0 0 1rem;
+}
