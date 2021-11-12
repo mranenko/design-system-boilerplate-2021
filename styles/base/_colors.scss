@@ -1,19 +1,60 @@
-$-meadow: #3fa9a9;
-$-sunrise: #f59e7a;
-$-storm: #b6c6d1;
-$-snow: #ffffff;
+/*
+  color functions
+*/
 
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function color-level($color: color(neutral), $level: 500, $color-interval: 18%) {
+  @if ($level < 500) {
+    $-color-percentage: $color-interval * ((500 - $level) / 100);
+    @return tint($color, $-color-percentage);
+  } @else if ($level > 500) {
+    $-color-percentage: $color-interval * (($level - 500) / 100);
+    @return shade($color, $-color-percentage);
+  } @else {
+    @return $color;
+  }
+}
+
+@function contrast-color($color, $dark: color(black), $light: color(white)) {
+  @if (lightness($color) > 75) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+
+/* main colors */
+$-meadow: #3e9d9d;
+$-sunrise: #f59e7a;
+
+/* neutral colors */
+$-cloud: #fbfbfd;
+$-pebble: #5c5d68;
+$-storm: #b6c6d1;
+
+/* auxilliary colours */
 $-grass: #69bda3;
 $-sky: #699dbd;
 $-peach: #f7d87f;
 $-watermelon: #f77f7f;
 
 
+/* initial color map */
 $colors: (
   primary: $-meadow,
   accent: $-sunrise,
   neutral: $-storm,
-  white: $-snow,
+
+  black: $-pebble,
+  white: $-cloud,
 
   success: $-grass,
   info: $-sky,

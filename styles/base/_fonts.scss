@@ -42,12 +42,15 @@ $fonts: (
 $fonts: map-merge($fonts, (
   text: (
     family: font(family, source-sans-pro),
+    line-height: 1.5,
     size: 1rem,
     weight: 400,
   ),
 
   title: (
     family: font(family, source-sans-pro),
+    letter-spacing: .25rem,
+    line-height: 1.15,
     weight: 400,
   ),
 ));
