@@ -1,9 +1,19 @@
+$-main-background: color-neutral(50);
+
 .main {
-  min-height: 100vh;
+  @include contrast(
+    $-main-background,
+    color(text, dark),
+    color(text, light),
+  );
   padding: 1.5rem 2rem;
+
+  .link {
+    color: color(primary);
+  }
 }
 
-.main-with-fixed-side-nav {
+.main-side-nav {
   padding-left: 13.5rem;
   position: relative;
 }

@@ -40,6 +40,10 @@ $fonts: (
 
 
 $fonts: map-merge($fonts, (
+  small: (
+    size: .875rem,
+  ),
+
   text: (
     family: font(family, source-sans-pro),
     line-height: 1.5,

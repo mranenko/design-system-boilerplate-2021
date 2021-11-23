@@ -1,9 +1,43 @@
-.fixed-side-nav {
-  background: color(neutral);
+$-side-nav-background: color-neutral(500);
+$-side-nav-width: 12rem;
+$-side-nav-z-index: 1;
+
+.side-nav {
+  @include contrast($-side-nav-background);
   left: 0;
   margin: -1.5rem 0;
   min-height: 100vh;
-  padding: 1.5rem 2rem;
+  padding: 1.75rem 2rem 1.5rem;
   position: fixed;
-  width: 12rem;
+  width: $-side-nav-width;
+  z-index: $-side-nav-z-index;
+}
+
+.side-nav a,
+.side-nav .link {
+  color: inherit;
+  display: block;
+  font-size: font(small, size);
+  margin: -.25rem -2rem .25rem;
+  padding: .25rem 2rem;
+
+  &.active {
+    color: contrast(
+      $-side-nav-background,
+      color(text, dark-accent),
+      color(text, light-accent)
+    );
+    border: solid color(primary);
+    border-width: 0 0 0 .375rem;
+    padding-left: 1.625rem;
+  }
+}
+
+.side-nav h4.title {
+  color: contrast(
+    $-side-nav-background,
+    color(text, dark-accent),
+    color(text, light-accent)
+  );
+  margin: 1rem 0;
 }

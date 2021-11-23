@@ -1,0 +1,34 @@
+.color-list {
+  display: block;
+  list-style: none;
+  margin: -.5rem -.5rem 1rem;
+}
+
+.color-list .color {
+  border-radius: 50%;
+  display: inline-block;
+  height: 5rem;
+  margin: .5rem;
+  width: 5rem;
+
+  &.color-primary { background: color(primary); }
+  &.color-neutral { background: color(neutral); }
+  &.color-black { background: color(black); }
+  &.color-white { background: color(white); border: .125rem solid color-neutral(300); }
+
+  &.color-success { background: color(success); }
+  &.color-info { background: color(info); }
+  &.color-warning { background: color(warning); }
+  &.color-danger { background: color(danger); }
+
+  &.color-neutral-50 { background: color-neutral(50); border: .125rem solid color-neutral(300); }
+  &.color-neutral-100 { background: color-neutral(100); border: .125rem solid color-neutral(300); }
+  &.color-neutral-200 { background: color-neutral(200); border: .125rem solid color-neutral(300); }
+  &.color-neutral-300 { background: color-neutral(300); }
+  &.color-neutral-400 { background: color-neutral(400); }
+  &.color-neutral-500 { background: color-neutral(500); }
+  &.color-neutral-600 { background: color-neutral(600); }
+  &.color-neutral-700 { background: color-neutral(700); }
+  &.color-neutral-800 { background: color-neutral(800); }
+  &.color-neutral-900 { background: color-neutral(900); }
+}

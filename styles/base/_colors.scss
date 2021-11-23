@@ -1,5 +1,5 @@
 /*
-  color functions
+  color functions + mixins
 */
 
 @function shade($color, $percentage) {
@@ -22,23 +22,25 @@
   }
 }
 
-@function contrast-color($color, $dark: color(black), $light: color(white)) {
-  @if (lightness($color) > 75) {
+@function contrast($color, $dark: color(text, dark), $light: color(text, light)) {
+  @if (lightness($color) > 67) {
     @return $dark;
   } @else {
     @return $light;
   }
 }
 
+@mixin contrast($color, $dark: color(text, dark), $light: color(text, light)) {
+  background: $color;
+  color: contrast($color, $dark, $light);
+}
 
-/* main colors */
+
+/* primary + neutral colors */
 $-meadow: #3e9d9d;
-$-sunrise: #f59e7a;
-
-/* neutral colors */
 $-cloud: #fbfbfd;
-$-pebble: #5c5d68;
-$-storm: #b6c6d1;
+$-pebble: #494d58;
+$-storm: #d6dee1;
 
 /* auxilliary colours */
 $-grass: #69bda3;
@@ -50,10 +52,8 @@ $-watermelon: #f77f7f;
 /* initial color map */
 $colors: (
   primary: $-meadow,
-  accent: $-sunrise,
-  neutral: $-storm,
-
   black: $-pebble,
+  neutral: $-storm,
   white: $-cloud,
 
   success: $-grass,
@@ -71,4 +71,38 @@ $colors: (
   }
 
   @return $value;
+}
+
+
+/* additional colors */
+$colors: map-merge($colors, (
+  text: (
+    dark: rgba(color(black), .8),
+    dark-accent: color(black),
+    dark-subtle: rgba(color(black), .6),
+
+    light: rgba(color(white), .8),
+    light-accent: color(white),
+    light-subtle: rgba(color(white), .6),
+  ),
+));
+
+
+/* neutral color map */
+$color-neutral: (
+  50: color-level(color(neutral), 50),
+  100: color-level(color(neutral), 100),
+  200: color-level(color(neutral), 200),
+  300: color-level(color(neutral), 300),
+  400: color-level(color(neutral), 400),
+  500: color-level(color(neutral), 500),
+  600: color-level(color(neutral), 600),
+  700: color-level(color(neutral), 700),
+  800: color-level(color(neutral), 800),
+  900: color-level(color(neutral), 900),
+);
+
+
+@function color-neutral($level: 500) {
+  @return map-get($color-neutral, $level);
 }

@@ -1,0 +1,17 @@
+$-footer-background: color(black);
+$-footer-z-index: 2;
+
+.footer {
+  @include contrast(
+    $-footer-background,
+    color(text, dark),
+    color(text, light)
+  );
+  font-size: font(small, size);
+  padding: 1.5rem 2rem;
+  z-index: $-footer-z-index;
+
+  .link {
+    color: inherit;
+  }
+}
