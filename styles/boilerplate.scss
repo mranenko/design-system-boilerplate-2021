@@ -2,12 +2,9 @@
 @import 'base/fonts';
 @import 'base/global';
 
-@import 'demo/colors';
-@import 'demo/fonts';
-@import 'demo/index';
-
-@import 'layouts/body';
 @import 'layouts/footer';
 @import 'layouts/header';
 @import 'layouts/main';
 @import 'layouts/nav';
+
+@import 'pages/demo';

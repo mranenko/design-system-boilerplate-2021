@@ -17,37 +17,39 @@
 
 
 /* primary + neutral colors */
-$-meadow: #3e9d9d;
+$-charcoal: #37454e;
 $-cloud: #fbfbfd;
-$-pebble: #37454e;
-$-storm: #68808f;
+$-storm: #586b76;
+$-meadow: #3e9d9d;
+$-peach: #ff996f;
 
 /* auxilliary colours */
-$-grass: #69bda3;
-$-sky: #699dbd;
-$-peach: #f7d87f;
-$-watermelon: #f77f7f;
+$-grass: #3eaf7b;
+$-sky: #4e7fbd;
+$-sun: #fbce4e;
+$-watermelon: #f96277;
 
 
-/* initial color map */
+/* color map */
 $colors: (
-  primary: $-meadow,
-  black: $-pebble,
+  accent: $-peach,
+  black: $-charcoal,
   neutral: $-storm,
+  primary: $-meadow,
   white: $-cloud,
 
   success: $-grass,
   info: $-sky,
   danger: $-watermelon,
-  warning: $-peach,
+  warning: $-sun,
   
   neutrals: (
-    100: lighten($-storm, 48),
-    200: lighten($-storm, 43),
-    300: lighten($-storm, 38),
-    400: lighten($-storm, 28),
-    500: lighten($-storm, 18),
-    600: lighten($-storm, 9),
+    100: lighten($-storm, 56),
+    200: lighten($-storm, 50),
+    300: lighten($-storm, 44),
+    400: lighten($-storm, 32),
+    500: lighten($-storm, 21),
+    600: lighten($-storm, 10),
     700: $-storm,
   ),
 );
@@ -69,7 +71,7 @@ $colors: (
 }
 
 
-/* additional colors */
+/* additional element colors */
 $colors: map-merge($colors, (
   text: (
     dark: rgba(color(black), .8),

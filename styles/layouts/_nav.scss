@@ -1,4 +1,4 @@
-$-side-nav-background: color(neutral);
+$-side-nav-background: color(neutral, 600);
 $-side-nav-width: 12rem;
 $-side-nav-z-index: 1;
 
@@ -27,7 +27,7 @@ $-side-nav-z-index: 1;
       color(text, dark-accent),
       color(text, light-accent)
     );
-    border: solid color(primary);
+    border: solid color(accent);
     border-width: 0 0 0 .375rem;
     padding-left: 1.625rem;
   }
