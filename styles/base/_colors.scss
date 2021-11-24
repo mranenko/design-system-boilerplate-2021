@@ -2,26 +2,6 @@
   color functions + mixins
 */
 
-@function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
-}
-
-@function tint($color, $percentage) {
-  @return mix(white, $color, $percentage);
-}
-
-@function color-level($color, $level: 500, $color-interval: 18%) {
-  @if ($level < 500) {
-    $-color-percentage: $color-interval * ((500 - $level) / 100);
-    @return tint($color, $-color-percentage);
-  } @else if ($level > 500) {
-    $-color-percentage: $color-interval * (($level - 500) / 100);
-    @return shade($color, $-color-percentage);
-  } @else {
-    @return $color;
-  }
-}
-
 @function contrast($color, $dark: color(text, dark), $light: color(text, light)) {
   @if (lightness($color) > 67) {
     @return $dark;
@@ -39,8 +19,8 @@
 /* primary + neutral colors */
 $-meadow: #3e9d9d;
 $-cloud: #fbfbfd;
-$-pebble: #494d58;
-$-storm: #cedadf;
+$-pebble: #37454e;
+$-storm: #68808f;
 
 /* auxilliary colours */
 $-grass: #69bda3;
@@ -62,16 +42,13 @@ $colors: (
   warning: $-peach,
   
   neutrals: (
-    50: color-level($-storm, 50),
-    100: color-level($-storm, 100),
-    200: color-level($-storm, 200),
-    300: color-level($-storm, 300),
-    400: color-level($-storm, 400),
-    500: color-level($-storm, 500),
-    600: color-level($-storm, 600),
-    700: color-level($-storm, 700),
-    800: color-level($-storm, 800),
-    900: color-level($-storm, 900),
+    100: lighten($-storm, 48),
+    200: lighten($-storm, 43),
+    300: lighten($-storm, 38),
+    400: lighten($-storm, 28),
+    500: lighten($-storm, 18),
+    600: lighten($-storm, 9),
+    700: $-storm,
   ),
 );
 
