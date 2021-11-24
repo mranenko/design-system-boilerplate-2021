@@ -1,4 +1,4 @@
-<img src="images/screenshots/scss-boilerplate-1200.png" alt="" style="margin: 0 auto; max-width: 100%;" />
+<img src="images/screenshots/design-system-boilerplate-2021.png" alt="" style="margin: 0 auto; max-width: 100%;" />
 
 
 # Design system boilerplate 2021

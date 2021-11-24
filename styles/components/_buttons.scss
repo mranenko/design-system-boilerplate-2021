@@ -1,0 +1,70 @@
+/*
+  button properies
+*/
+
+$-button-margin: .25rem .25rem 0 0;
+$-button-padding: .75rem 1.5rem;
+
+
+/*
+  default buttons
+*/
+
+.button {
+  @include contrast(
+    color(neutral, 600),
+    color(text, dark-accent),
+    color(text, light-accent)
+  );
+  border: 0;
+  display: inline-block;
+  margin: $-button-margin;
+  padding: $-button-padding;
+
+  &:hover,
+  &.hover {
+    @include contrast(
+      color(neutral, 700),
+      color(text, dark-accent),
+      color(text, light-accent)
+    );
+  }
+}
+
+
+/*
+  primary buttons
+*/
+
+.button.primary {
+  @include contrast(
+    color(primary),
+    color(text, dark-accent),
+    color(text, light-accent)
+  );
+
+  &:hover,
+  &.hover {
+    @include contrast(
+      darken(color(primary), 10),
+      color(text, dark-accent),
+      color(text, light-accent)
+    );
+  }
+}
+
+
+/*
+  link buttons
+*/
+
+.button.link {
+  background: none;
+  color: color(primary);
+
+  &:hover,
+  &.hover {
+    background: none;
+    color: darken(color(primary), 10);
+  }
+}
