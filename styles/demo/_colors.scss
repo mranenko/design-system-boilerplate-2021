@@ -5,30 +5,48 @@
 }
 
 .color-list .color {
-  border-radius: 50%;
+  border: 1px solid color(neutral, 300);
   display: inline-block;
-  height: 5rem;
+  height: 6rem;
   margin: .5rem;
-  width: 5rem;
+  position: relative;
+  width: 6rem;
 
-  &.color-primary { background: color(primary); }
-  &.color-neutral { background: color(neutral); }
-  &.color-black { background: color(black); }
-  &.color-white { background: color(white); border: .125rem solid color-neutral(300); }
+  &::after {
+    @include contrast(color(white));
+    border-top: 1px solid color(neutral, 300);
+    bottom: 0;
+    font-size: font(small, size);
+    position: absolute;
+    text-align: center;
+    white-space: pre-line;
+    width: 100%;
+  }
 
-  &.color-success { background: color(success); }
-  &.color-info { background: color(info); }
-  &.color-warning { background: color(warning); }
-  &.color-danger { background: color(danger); }
+  @mixin demo-color($color, $value) {
+    background: $value;
 
-  &.color-neutral-50 { background: color-neutral(50); border: .125rem solid color-neutral(300); }
-  &.color-neutral-100 { background: color-neutral(100); border: .125rem solid color-neutral(300); }
-  &.color-neutral-200 { background: color-neutral(200); border: .125rem solid color-neutral(300); }
-  &.color-neutral-300 { background: color-neutral(300); }
-  &.color-neutral-400 { background: color-neutral(400); }
-  &.color-neutral-500 { background: color-neutral(500); }
-  &.color-neutral-600 { background: color-neutral(600); }
-  &.color-neutral-700 { background: color-neutral(700); }
-  &.color-neutral-800 { background: color-neutral(800); }
-  &.color-neutral-900 { background: color-neutral(900); }
+    &::after {
+      content: '#{$color} \00000a #{$value}';
+    }
+  }
+
+
+  $-color-list: black, neutral, primary, white, danger, info, success, warning;
+  
+  @each $-color in $-color-list {
+    &.color-#{'' + $-color} {
+      $-value: color($-color);
+      @include demo-color($-color, $-value);
+    }
+  }
+
+
+  $-color-neutral-map: map-get($colors, neutrals);
+
+  @each $-color, $-value in $-color-neutral-map {
+    &.color-neutral-#{'' + $-color} {
+      @include demo-color($-color, $-value);
+    }
+  }
 }

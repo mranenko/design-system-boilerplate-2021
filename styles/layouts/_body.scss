@@ -1,3 +1,37 @@
+.body-header-main-footer {
+  $-footer-height: 5rem;
+  $-footer-z-index: 2;
+  $-header-height: 7rem;
+  $-header-z-index: 2;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+
+  .header {
+    grid-area: header;
+    height: $-header-height;
+    position: fixed;
+    top: 0;
+    z-index: $-header-z-index;
+  }
+
+  .main {
+    grid-area: main;
+    margin-top: $-header-height;
+  }
+
+  .footer {
+    grid-area: footer;
+    height: $-footer-height;
+    z-index: $-header-z-index;
+  }
+}
+
 .body-main-footer {
   display: grid;
   grid-template-columns: 1fr;

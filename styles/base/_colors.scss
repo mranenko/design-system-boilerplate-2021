@@ -10,7 +10,7 @@
   @return mix(white, $color, $percentage);
 }
 
-@function color-level($color: color(neutral), $level: 500, $color-interval: 18%) {
+@function color-level($color, $level: 500, $color-interval: 18%) {
   @if ($level < 500) {
     $-color-percentage: $color-interval * ((500 - $level) / 100);
     @return tint($color, $-color-percentage);
@@ -40,7 +40,7 @@
 $-meadow: #3e9d9d;
 $-cloud: #fbfbfd;
 $-pebble: #494d58;
-$-storm: #d6dee1;
+$-storm: #cedadf;
 
 /* auxilliary colours */
 $-grass: #69bda3;
@@ -60,10 +60,28 @@ $colors: (
   info: $-sky,
   danger: $-watermelon,
   warning: $-peach,
+  
+  neutrals: (
+    50: color-level($-storm, 50),
+    100: color-level($-storm, 100),
+    200: color-level($-storm, 200),
+    300: color-level($-storm, 300),
+    400: color-level($-storm, 400),
+    500: color-level($-storm, 500),
+    600: color-level($-storm, 600),
+    700: color-level($-storm, 700),
+    800: color-level($-storm, 800),
+    900: color-level($-storm, 900),
+  ),
 );
 
 
+/* color getter function */
 @function color($keys...) {
+  @if (nth($keys, 1) == neutral and length($keys) > 1) {
+    @return map-get(map-get($colors, neutrals), nth($keys, 2));
+  }
+
   $value: $colors;
 
   @each $key in $keys {
@@ -86,23 +104,3 @@ $colors: map-merge($colors, (
     light-subtle: rgba(color(white), .6),
   ),
 ));
-
-
-/* neutral color map */
-$color-neutral: (
-  50: color-level(color(neutral), 50),
-  100: color-level(color(neutral), 100),
-  200: color-level(color(neutral), 200),
-  300: color-level(color(neutral), 300),
-  400: color-level(color(neutral), 400),
-  500: color-level(color(neutral), 500),
-  600: color-level(color(neutral), 600),
-  700: color-level(color(neutral), 700),
-  800: color-level(color(neutral), 800),
-  900: color-level(color(neutral), 900),
-);
-
-
-@function color-neutral($level: 500) {
-  @return map-get($color-neutral, $level);
-}

@@ -69,23 +69,23 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
 }
 
 h1 {
-  font-size: 3.25rem;
-}
-
-h2 {
   font-size: 2.5rem;
 }
 
-h3 {
+h2 {
   font-size: 2rem;
 }
 
-h4 {
+h3 {
   font-size: 1.5rem;
 }
 
+h4 {
+  font-size: 1.25rem;
+}
+
 hr {
-  border: solid color-neutral(300);
+  border: solid color(neutral, 300);
   border-width: .125rem 0 0;
   margin: 1.5rem 0;
 }
