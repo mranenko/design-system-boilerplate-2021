@@ -41,19 +41,18 @@ $fonts: (
 
 $fonts: map-merge($fonts, (
   small: (
-    size: .875rem,
+    size: .75rem,
   ),
 
   text: (
     family: font(family, source-sans-pro),
     line-height: 1.5,
-    size: 1rem,
+    size: .875rem,
     weight: 400,
   ),
 
   title: (
-    family: font(family, source-sans-pro),
-    letter-spacing: .25rem,
+    family: font(family, pt-sans),
     line-height: 1.2,
     weight: 400,
   ),

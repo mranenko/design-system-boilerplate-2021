@@ -1,4 +1,10 @@
+/*
+  footer properties
+*/
+
 $-footer-background: color(neutral, 700);
+$-footer-padding: 2rem;
+
 
 .footer {
   @include contrast(
@@ -6,8 +12,7 @@ $-footer-background: color(neutral, 700);
     color(text, dark),
     color(text, light)
   );
-  font-size: font(small, size);
-  padding: 1.5rem 2rem;
+  padding: $-footer-padding;
 
   .link {
     color: inherit;

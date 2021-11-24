@@ -1,4 +1,9 @@
-$-body-background: color(white);
+/*
+  body properties
+*/
+
+$-body-background: color(neutral, 100);
+
 
 * {
   box-sizing: border-box;
@@ -16,11 +21,6 @@ html {
 }
 
 body {
-  @include contrast(
-    $-body-background,
-    color(text, dark),
-    color(text, light)
-  );
   font-family: font(text, family);
   font-size: font(text, size);
   font-weight: font(text, weight);
@@ -59,29 +59,20 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
   );
   font-family: font(title, family);
   font-weight: font(title, weight);
-  letter-spacing: font(title, letter-spacing);
   line-height: font(title, line-height);
   margin: 0 0 1rem;
 }
 
-.title + .subtitle {
-  margin-top: -.5rem;
-}
-
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
 }
 
 hr {

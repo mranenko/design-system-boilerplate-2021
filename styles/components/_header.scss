@@ -1,0 +1,39 @@
+/*
+  header properties
+*/
+
+$-header-background: color(white);
+$-header-box-shadow: 0 .125rem .25rem 0 rgba(color(black), .15);
+
+
+.header {
+  @include contrast($-header-background);
+  box-shadow: $-header-box-shadow;
+  padding: 1.5rem 2rem;
+  width: 100vw;
+}
+
+
+/*
+  header titles
+*/
+
+.header {
+  strong {
+    color: color(primary);
+    font-weight: 700;
+  }
+
+  .title {
+    color: contrast(
+      $-header-background,
+      color(text, dark-accent),
+      color(text, light-accent)
+    );
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}

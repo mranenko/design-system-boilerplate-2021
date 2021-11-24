@@ -1,10 +1,12 @@
 @import 'base/colors';
 @import 'base/fonts';
 @import 'base/global';
+@import 'base/utilities';
 
-@import 'layouts/footer';
-@import 'layouts/header';
-@import 'layouts/main';
-@import 'layouts/nav';
+@import 'components/cards';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/main';
+@import 'components/nav';
 
 @import 'pages/demo';

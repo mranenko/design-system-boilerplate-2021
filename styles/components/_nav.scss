@@ -1,6 +1,11 @@
+/*
+  side nav properties
+*/
+
 $-side-nav-background: color(neutral, 600);
 $-side-nav-width: 12rem;
 $-side-nav-z-index: 1;
+
 
 .side-nav {
   @include contrast($-side-nav-background);
@@ -13,11 +18,15 @@ $-side-nav-z-index: 1;
   z-index: $-side-nav-z-index;
 }
 
+
+/*
+  side nav links
+*/
+
 .side-nav a,
 .side-nav .link {
   color: inherit;
   display: block;
-  font-size: font(small, size);
   margin: -.25rem -2rem .25rem;
   padding: .25rem 2rem;
 
@@ -33,7 +42,12 @@ $-side-nav-z-index: 1;
   }
 }
 
-.side-nav h4.title {
+
+/*
+  side nav titles
+*/
+
+.side-nav .title {
   color: contrast(
     $-side-nav-background,
     color(text, dark-accent),

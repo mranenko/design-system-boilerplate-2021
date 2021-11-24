@@ -3,7 +3,7 @@
 */
 
 .demo {
-  $-footer-height: 5rem;
+  $-footer-height: 5.5rem;
   $-footer-z-index: 2;
   $-header-height: 7rem;
   $-header-z-index: 2;
@@ -38,88 +38,74 @@
 
 
 /*
-  demo titles
-*/
-
-.demo .main {
-  h1.title {
-    color: color(primary);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-  }
-
-  h2.subtitle {
-    color: color(primary);
-    font-size: 2rem;
-  }
-}
-
-
-/*
   demo colors
 */
 
-.color-list {
-  display: block;
-  list-style: none;
-  margin: -.5rem -.5rem 1.5rem;
-}
-
-.color-list .color {
-  border: 1px solid color(neutral, 300);
-  display: inline-block;
-  height: 6rem;
-  margin: .5rem;
-  position: relative;
-  width: 6rem;
-
-  &::after {
-    @include contrast(color(white));
-    border-top: 1px solid color(neutral, 300);
-    bottom: 0;
-    font-size: font(small, size);
-    position: absolute;
-    text-align: center;
-    white-space: pre-line;
-    width: 100%;
+.demo {
+  .color-list {
+    display: block;
+    list-style: none;
+    margin: .25rem -.25rem;
   }
 
 
-  $-demo-colors:
-    accent,
-    black,
-    neutral,
-    primary,
-    white,
-    
-    danger,
-    info,
-    success,
-    warning;
-
-  $-demo-neutral-colors: map-get($colors, neutrals);
-
-
-
-  @mixin demo-color($color, $value) {
-    background: $value;
-
+  .color {
+    border: 1px solid color(neutral, 200);
+    display: inline-block;
+    height: 6rem;
+    margin: .25rem;
+    position: relative;
+    width: 6rem;
+  
     &::after {
-      content: '#{$color} \00000a #{$value}';
+      @include contrast(color(white));
+      border-top: 1px solid color(neutral, 200);
+      bottom: 0;
+      font-size: font(small, size);
+      padding: .25rem 0;
+      position: absolute;
+      text-align: center;
+      white-space: pre-line;
+      width: 100%;
     }
-  }
-
-
-  @each $-color in $-demo-colors {
-    &.color-#{'' + $-color} {
-      $-value: color($-color);
-      @include demo-color($-color, $-value);
+  
+  
+    $-demo-colors:
+      accent,
+      black,
+      neutral,
+      primary,
+      white,
+      
+      danger,
+      info,
+      success,
+      warning;
+  
+    $-demo-neutral-colors: map-get($colors, neutrals);
+  
+  
+  
+    @mixin demo-color($color, $value) {
+      background: $value;
+  
+      &::after {
+        content: '#{$color} \00000a #{$value}';
+      }
     }
-  }
-
-  @each $-color, $-value in $-demo-neutral-colors {
-    &.color-neutral-#{'' + $-color} {
-      @include demo-color($-color, $-value);
+  
+  
+    @each $-color in $-demo-colors {
+      &.color-#{'' + $-color} {
+        $-value: color($-color);
+        @include demo-color($-color, $-value);
+      }
     }
-  }
+  
+    @each $-color, $-value in $-demo-neutral-colors {
+      &.color-neutral-#{'' + $-color} {
+        @include demo-color($-color, $-value);
+      }
+    }
+  }  
 }

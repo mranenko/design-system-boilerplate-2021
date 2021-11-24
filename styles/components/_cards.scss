@@ -1,0 +1,32 @@
+/*
+  card properies
+*/
+
+$-card-background: color(white);
+$-card-box-shadow: 0 .125rem .25rem 0 rgba(color(black), .15);
+$-card-margin: 0 0 1.5rem;
+$-card-padding: 1rem 1.5rem;
+
+
+.card {
+  @include contrast($-card-background);
+  box-shadow: $-card-box-shadow;
+  margin: $-card-margin;
+  padding: $-card-padding;
+}
+
+.card-footer {
+  border-top: 1px solid color(neutral, 200);
+  margin: 1.5rem 0 0;
+  padding: 1rem 0 0;
+}
+
+.card-header {
+  border-bottom: 1px solid color(neutral, 200);
+  margin: 0 0 1.5rem;
+  padding: 0 0 1rem;
+
+  .title {
+    margin: 0;
+  }
+}
