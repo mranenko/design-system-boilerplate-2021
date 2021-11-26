@@ -1,0 +1,14 @@
+.grid-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/* @media (min-width: 640px) */
+@media (min-width: 40rem) {
+  .grid-row {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}

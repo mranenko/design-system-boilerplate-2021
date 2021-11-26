@@ -5,7 +5,9 @@
 
 Design system boilerplate for a responsive web application.
 
+
 ----------
+
 
 ## Get started
 
@@ -15,7 +17,10 @@ Run the following in the project directory to install dependencies:
 yarn
 ```
 
-Run scss compiler/watcher and start live server on port 20211:
+> Note: To install or upgrade yarn, run `npm install -g yarn`
+
+
+Run scss compiler/watcher and start live server on port 20213:
 
 ```console
 yarn start
@@ -23,10 +28,9 @@ yarn start
 
 These and other yarn scripts are in `package.json`.
 
-> Note: To install or upgrade yarn, run `npm install -g yarn`
-
 
 ----------
+
 
 ## How to customize
 

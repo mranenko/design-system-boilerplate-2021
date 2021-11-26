@@ -1,0 +1,39 @@
+%input-text {
+  @include contrast(
+    color(neutral, 200),
+    color(text, dark),
+    color(text, light)
+  );
+  border: 0;
+  font: inherit;
+  padding: .5rem;
+  width: 100%;
+}
+
+
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="text"] {
+  @extend %input-text;
+  line-height: 1.5rem;
+}
+
+
+textarea {
+  @extend %input-text;
+  height: 6rem;
+  resize: none;
+}
+
+
+/*
+  button row
+*/
+
+.input-row {
+  display: block;
+  margin: 0 0 1rem;
+}

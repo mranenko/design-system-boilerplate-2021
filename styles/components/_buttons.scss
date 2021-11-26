@@ -17,6 +17,7 @@ $-button-padding: .75rem 1.5rem;
     color(text, light-accent)
   );
   border: 0;
+  cursor: pointer;
   display: inline-block;
   margin: $-button-margin;
   padding: $-button-padding;
@@ -66,5 +67,19 @@ $-button-padding: .75rem 1.5rem;
   &.hover {
     background: none;
     color: darken(color(primary), 10);
+  }
+}
+
+
+/*
+  button row
+*/
+
+.button-row {
+  display: block;
+  margin: -.125rem -.25rem;
+
+  .button {
+    margin: .125rem;
   }
 }
