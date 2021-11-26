@@ -1,3 +1,38 @@
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
+
+
+/*
+  center child .content horizontally + vertically
+*/
+
+.content-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .content {
+    width: 100%;
+  }
+}
+
+
+/*
+  basic responsive grid row with equal width columns
+*/
+
+.grid-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/* @media (min-width: 640px) */
+@media (min-width: 40rem) {
+  .grid-row {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
