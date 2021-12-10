@@ -1,9 +1,15 @@
 /*
-  body properties
+  element properties
 */
 
 $-body-background: color(neutral, 100);
 
+$-code-background: color(neutral, 100);
+
+
+/*
+  html + body
+*/
 
 * {
   box-sizing: border-box;
@@ -28,6 +34,11 @@ body {
   line-height: font(text, line-height);
 }
 
+
+/*
+  links + nav
+*/
+
 a {
   color: inherit;
   cursor: pointer;
@@ -48,9 +59,10 @@ nav .link {
   color: inherit;
 }
 
-p {
-  margin: 0 0 1rem;
-}
+
+/*
+  titles + text
+*/
 
 h1, h2, h3, h4, h5, h6, .title, .subtitle {
   color: contrast(
@@ -60,21 +72,48 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
   );
   font-family: font(title, family);
   font-weight: font(title, weight);
+  letter-spacing: 1px;
   line-height: font(title, line-height);
   margin: 0 0 1rem;
 }
 
-h1 {
-  font-size: 2.4rem;
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+p { margin: 0 0 1rem; }
+
+
+/*
+  code
+*/
+
+%code {
+  @include contrast($-code-background);
+  font-family: font(code, family);
+  font-size: font(code, size);
+  font-weight: font(code, weight);
+  line-height: font(code, line-height);
 }
 
-h2 {
-  font-size: 1.8rem;
+code {
+  @extend %code;
+  display: inline-block;
+  margin: 0 .25rem;
+  padding: .25rem .5rem;
 }
 
-h3 {
-  font-size: 1.4rem;
+pre {
+  @extend %code;
+  display: block;
+  margin: 0 0 1rem;
+  padding: 1rem;
 }
+
+
+/*
+  horizontal rule
+*/
 
 hr {
   border: solid color(neutral, 200);
