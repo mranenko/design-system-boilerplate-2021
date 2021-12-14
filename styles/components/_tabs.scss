@@ -1,0 +1,36 @@
+/*
+  tab navigation
+*/
+
+.nav-tabs {
+  border-bottom: 1px solid color(neutral, 200);
+  margin: 0 0 1.5rem;
+
+  .tab {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem;
+  }
+
+  .tab:hover {
+    background: rgba(color(black), .05);
+  }
+
+  .tab.active {
+    border-bottom: .25rem solid color(accent);
+    padding-bottom: .75rem;
+  }
+}
+
+
+/*
+  tab content
+*/
+
+.tab-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
