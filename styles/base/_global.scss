@@ -67,8 +67,8 @@ nav {
 h1, h2, h3, h4, h5, h6, .title, .subtitle {
   color: contrast(
     $-body-background,
-    color(text, dark-accent),
-    color(text, light-accent)
+    color(text, dark, accent),
+    color(text, light, accent)
   );
   font-family: font(title, family);
   font-weight: font(title, weight);

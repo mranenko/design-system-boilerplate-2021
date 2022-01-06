@@ -27,8 +27,8 @@ $-header-box-shadow: 0 .125rem .25rem 0 rgba(color(black), .15);
   .title {
     color: contrast(
       $-header-background,
-      color(text, dark-accent),
-      color(text, light-accent)
+      color(text, dark, accent),
+      color(text, light, accent)
     );
     margin: 0;
     overflow: hidden;

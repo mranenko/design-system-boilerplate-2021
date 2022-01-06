@@ -57,8 +57,20 @@ $colors: (
 
 /* color getter function */
 @function color($keys...) {
+  /* neutrals */
   @if (nth($keys, 1) == neutral and length($keys) > 1) {
     @return map-get(map-get($colors, neutrals), nth($keys, 2));
+  }
+
+  /* text */
+  @if (nth($keys, 1) == text and length($keys) > 2) {
+    @if (nth($keys, 2) == dark) {
+      @return map-get(map-get(map-get($colors, text), darks), nth($keys, 3));
+    }
+
+    @if (nth($keys, 2) == light) {
+      @return map-get(map-get(map-get($colors, text), lights), nth($keys, 3));
+    }
   }
 
   $value: $colors;
@@ -75,10 +87,21 @@ $colors: (
 $colors: map-merge($colors, (
   text: (
     dark: rgba(color(black), .8),
+    light: rgba(color(white), .8),
+
+    darks: (
+      accent: color(black),
+      subtle: rgba(color(black), .6),
+    ),
+
+    lights: (
+      accent: color(white),
+      subtle: rgba(color(white), .6),
+    ),
+
     dark-accent: color(black),
     dark-subtle: rgba(color(black), .6),
 
-    light: rgba(color(white), .8),
     light-accent: color(white),
     light-subtle: rgba(color(white), .6),
   ),

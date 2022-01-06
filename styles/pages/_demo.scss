@@ -82,10 +82,10 @@
       success,
       warning;
   
-    $-demo-neutral-colors: map-get($colors, neutrals);
+    $-demo-neutral-colors:
+      map-get($colors, neutrals);
   
-  
-  
+
     @mixin demo-color($color, $value) {
       background: $value;
   
@@ -93,7 +93,6 @@
         content: '#{$color} \00000a #{$value}';
       }
     }
-  
   
     @each $-color in $-demo-colors {
       &.color-#{'' + $-color} {
@@ -107,5 +106,18 @@
         @include demo-color($-color, $-value);
       }
     }
-  }  
+  }
+
+
+  .color-text-dark { color: color(text, dark); }
+  .color-text-dark-accent { color: color(text, dark, accent); }
+  .color-text-dark-subtle { color: color(text, dark, subtle); }
+  
+  [class^='color-text-light'] {
+    background: color(black);
+    padding: .5rem;
+  }
+  .color-text-light { color: color(text, light); }
+  .color-text-light-accent { color: color(text, light, accent); }
+  .color-text-light-subtle { color: color(text, light, subtle); }
 }

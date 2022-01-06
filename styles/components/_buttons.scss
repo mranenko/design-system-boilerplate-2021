@@ -13,8 +13,8 @@ $-button-padding: .75rem 1.5rem;
 .button {
   @include contrast(
     color(neutral, 600),
-    color(text, dark-accent),
-    color(text, light-accent)
+    color(text, dark, accent),
+    color(text, light, accent)
   );
   border: 0;
   cursor: pointer;
@@ -26,8 +26,8 @@ $-button-padding: .75rem 1.5rem;
   &.hover {
     @include contrast(
       color(neutral, 700),
-      color(text, dark-accent),
-      color(text, light-accent)
+      color(text, dark, accent),
+      color(text, light, accent)
     );
   }
 }
@@ -40,16 +40,16 @@ $-button-padding: .75rem 1.5rem;
 .button.primary {
   @include contrast(
     color(primary),
-    color(text, dark-accent),
-    color(text, light-accent)
+    color(text, dark, accent),
+    color(text, light, accent)
   );
 
   &:hover,
   &.hover {
     @include contrast(
       darken(color(primary), 10),
-      color(text, dark-accent),
-      color(text, light-accent)
+      color(text, dark, accent),
+      color(text, light, accent)
     );
   }
 }
