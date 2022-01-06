@@ -1,6 +1,6 @@
 import Tabs from './modules/Tabs.js';
 
 
-document.addEventListener('DOMContentLoaded', function(e) { 
+document.addEventListener('DOMContentLoaded', () => { 
   Tabs.initialize();
 });

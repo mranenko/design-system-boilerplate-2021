@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "demo/index.html",
   "name": "design-system-boilerplate-2021",
-  "repository": "https://github.com/mranenko/design-system-boilerplate-2021.git",
+  "repository": "https://github.com/mranenko/design-system-boilerplate-2021",
   "scripts": {
     "sass": "sass --watch styles --style compressed --no-source-map",
     "server": "live-server --open=demo/index.html --port=20213",
